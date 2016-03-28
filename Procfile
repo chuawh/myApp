@@ -1,1 +1,1 @@
-# mega-code
+web: node app.js
