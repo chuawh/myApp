@@ -84,7 +84,7 @@ request({
     var textMsg=JSON.parse(res.body);
     console.log('The chat message is: ' + textMsg.text + '\n');
     console.log('Ther email is: ' + textMsg.personEmail + '\n');
-    postHttp(textMsg.text);
+    //postHttp(textMsg.text);
 
 });
 
