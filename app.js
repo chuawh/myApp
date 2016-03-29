@@ -102,7 +102,7 @@ request({
     headers:{
          'Authorization' : token,
          'Content-type' : 'application/json'
-         }
+         },
     body:{
         roomId: roomId,
         text: msgContent
