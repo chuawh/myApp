@@ -98,11 +98,12 @@ var token='Bearer MTU5OThlYmMtMTIxMC00MDZmLTg1NzEtNzU4MGJkODc3MTFiNzg1OGRlOTktYj
 request({
     url: 'https://api.ciscospark.com/v1/messages/',
     method: 'POST', 
+    json:true,
     headers:{
          'Authorization' : token,
          'Content-type' : 'application/json'
          }
-    json:{
+    body:{
         roomId: roomId,
         text: msgContent
     }     
