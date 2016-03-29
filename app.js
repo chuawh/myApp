@@ -83,12 +83,41 @@ request({
     }
     var textMsg=JSON.parse(res.body);
     console.log('The chat message is: ' + textMsg.text + '\n');
-    console.log('Ther email is: ' + textMsg.personEmail + '\n');
+    //console.log('Ther email is: ' + textMsg.personEmail + '\n');
     //postHttp(textMsg.text);
+    postMsg(textMsg.roomId, textMsg.text);    
 
 });
 
 };
+
+function postMsg(roomId,msgContent){
+
+var token='Bearer MTU5OThlYmMtMTIxMC00MDZmLTg1NzEtNzU4MGJkODc3MTFiNzg1OGRlOTktYjdm';
+
+request({
+    url: 'https://api.ciscospark.com/v1/messages/',
+    method: 'POST', 
+    headers:{
+         'Authorization' : token,
+         'Content-type' : 'application/json'
+         }
+    json:{
+        roomId: roomId,
+        text: msgContent
+    }     
+}, function(error, res){
+    if(error) {
+        console.log(error);
+    } else {
+        console.log('The response code is ' + res.statusCode + '\n')
+        console.log('The json body is: ' + '\n' + res.body + '\n');
+    }
+
+});
+
+};
+
 
 
 
