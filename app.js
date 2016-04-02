@@ -104,7 +104,7 @@ request({
 
 
 
-/*
+
 
 function postMsg(roomId,msgContent){
 
@@ -137,7 +137,7 @@ request({
 });
 
 };
-*/
+
 
 
 
