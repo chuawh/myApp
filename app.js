@@ -78,7 +78,7 @@ request({
     if (str1[0]=='/call') {
       console.log('It is /call!!!!');}
       else {
-        console.log('It is not /call !!!');}
+        console.log('It is not /call !!!')};
       
     };
 
