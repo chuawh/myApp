@@ -75,7 +75,7 @@ request({
     console.log(str1);
 
     if (str1[0]=='/call') {
-      postMsg(jsonText.roomId, 'Ok, I will do it now');
+      postMsg(jsonText.roomId, '1. OK, I will do it now' + '\n' + '2. The phone is now ringing' ++ '\n' + '3. The call is connected' + '\n' + 'Please Choose 1');
      }else {
         console.log('I will not do anything');
        }
