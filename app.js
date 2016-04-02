@@ -68,17 +68,16 @@ request({
     }
     var jsonText=JSON.parse(res.body);
     console.log('The chat message is: ' + jsonText.text + '\n');
-    //console.log('Ther email is: ' + textMsg.personEmail + '\n');
     //postHttp(textMsg.text);
-    //postMsg(textMsg.roomId, textMsg.text);    
+    postMsg(textMsg.roomId, textMsg.text);    
 
     var mtext=jsonText.text;
     var str1 = mtext.split(" ");
 
     if (str1[0]=='/call') {
-      console.log('It is /call!!!!');}
+      postMsg(jsonText.roomId, 'Ok, I will do it now');
       else {
-        console.log('It is not /call !!!');}
+        console.log('I will not do anything');}
       
     
 });
