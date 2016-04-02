@@ -75,9 +75,11 @@ request({
     var str1 = mtext.split(" ");
 
     if (str1[0]=='/call') {
-      postMsg(jsonText.roomId, 'Ok, I will do it now')};
+      postMsg(jsonText.roomId, 'Ok, I will do it now');
+     }
       else {
-        console.log('I will not do anything');}
+        console.log('I will not do anything');
+       }
 });
 
 };
