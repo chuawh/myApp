@@ -68,8 +68,7 @@ request({
     }
     var jsonText=JSON.parse(res.body);
     console.log('The chat message is: ' + jsonText.text + '\n');
-    //postHttp(textMsg.text);
-    postMsg(textMsg.roomId, textMsg.text);    
+    //postHttp(textMsg.text); 
 
     var mtext=jsonText.text;
     var str1 = mtext.split(" ");
