@@ -63,7 +63,7 @@ request({
     if(error) {
         console.log(error);
     } else {
-        console.log('The response code is ' + res.statusCode + '\n')
+        console.log('The response code is ' + res.statusCode + '\n');
         console.log('The json body is: ' + '\n' + res.body + '\n');
     }
     var jsonText=JSON.parse(res.body);
@@ -78,14 +78,13 @@ request({
     if (str1[0]=='/call') {
       console.log('It is /call!!!!');}
       else {
-        console.log('It is not /call !!!')};
+        console.log('It is not /call !!!');}
       
-    }
+    };
 
 
 });
 
-};
 
 
 
