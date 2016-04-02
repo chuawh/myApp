@@ -72,6 +72,17 @@ request({
     //postHttp(textMsg.text);
     //postMsg(textMsg.roomId, textMsg.text);    
 
+    var mtext=jsonText.text;
+    var str1 = mtext.split(" ");
+
+    if (str1[0]=='/call') {
+      console.log('It is /call!!!!');}
+      else {
+        console.log('It is not /call !!!');}
+      };
+    }
+
+
 });
 
 };
