@@ -74,8 +74,8 @@ request({
     var str1 = mtext.split(" ");
     console.log(str1);
 
-    if (str1[0]=='/call') {
-      postMsg(jsonText.roomId, '1. OK, I will do it now' + '\n' + '2. The phone is now ringing' + '\n' + '3. The call is connected' + '\n' + 'Please Choose 1');
+    if (str1[0]=='/list') {
+      postMsg(jsonText.roomId, '1. WeiHong +14158510439' + '\n' + '2. Peter +123456789' + '\n' + '3. Sam +1913323232332' + '\n' + 'To all, use the following command:' + '\n' + '/call 1 "your voice message" ');
      }else {
         console.log('I will not do anything');
        }
