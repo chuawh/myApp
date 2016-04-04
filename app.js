@@ -110,6 +110,7 @@ request({
     if(error) {
         console.log(error);
     } else {
+    	console.log(url);
         console.log(response.statusCode, body);
     }
 });
