@@ -26,7 +26,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 //app.use('/', routes);
 
 app.get('/',function(req, res, next) {
-  res.send('Hello, you are good');  
+  res.send('App is up and running');  
 });
 
 
@@ -35,12 +35,6 @@ app.post('/users', function (req, res,next) {
   res.send('You are lucky!!!!');
   console.log('The Spark Webhook Post is: ');
   console.log(req.body);      //  JSON data
-  /*console.log('Message ID is: ' + req.body.id); //  text of JSON data
-  console.log('Room ID is: ' + req.body.roomId); //  text of JSON data
-  console.log('Person ID is: ' + req.body.personId); //  text of JSON data
-  console.log('Person Email is: ' + req.body.personEmail); //  text of JSON data
-  console.log('Text content is: ' + req.body.text); //  text of JSON data
-  console.log('Date Created is: ' + req.body.created); //  text of JSON */
   
   getMsg(req.body.data.id);
 
@@ -74,23 +68,43 @@ request({
     var str1 = mtext.split(" ");
     console.log(str1);
 
-    if (str1[0]=='/list') {
-      postMsg(jsonText.roomId, '1. WeiHong +14158510439' + '\n' + '2. Peter +123456789' + '\n' + '3. Sam +1913323232332' + '\n' + 'To all, use the following command:' + '\n' + '/call 1 "your voice message" ');
+    if (str1[0]=='/call') {
+      postMsg(jsonText.roomId, 'Please wait while we connect you to ' + str1[1]);
      }else {
         console.log('I will not do anything');
        }
+
+     postHttp();  
 });
 
 };
 
 
-
+/*
 function postHttp(msg){
 
 var token='6248436a7461745a50424e6f615363576162666672796e436871794e68454a514a444a4162666e784b565851';
 
 request({
     url: 'https://api.tropo.com/1.0/sessions?action=create' + '&token=' + token + '&txt=' + msg,
+    method: 'POST', 
+}, function(error, response, body){
+    if(error) {
+        console.log(error);
+    } else {
+        console.log(response.statusCode, body);
+    }
+});
+};*/
+
+function postHttp(){
+
+var token='41527455414c526e4c4b7243517a5a564a626d774c686647616f67707553777275647a7841774d49485a4157';
+var mobile='+14378862172';
+var sparkNumber='84484189@ciscospark.com';
+
+request({
+    url: 'https://api.tropo.com/1.0/sessions?action=create' + '&token=' + token + '&mobile=' + mobile + '&sparkNumber=' + sparkNumber,
     method: 'POST', 
 }, function(error, response, body){
     if(error) {
