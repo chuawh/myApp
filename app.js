@@ -106,11 +106,11 @@ var sparkNumber='84484189@ciscospark.com';
 request({
     url: 'https://api.tropo.com/1.0/sessions?action=create' + '&token=' + token + '&mobile=' + mobile + '&sparkNumber=' + sparkNumber,
     method: 'POST', 
+    console.log(url);
 }, function(error, response, body){
     if(error) {
         console.log(error);
     } else {
-    	console.log(url);
         console.log(response.statusCode, body);
     }
 });
