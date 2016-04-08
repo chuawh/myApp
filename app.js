@@ -135,7 +135,7 @@ var mobile='+6597809414';
 var data=strx + " " + stry;
 
 request({
-    url: 'https://api.tropo.com/1.0/sessions?action=create' + '&token=' + token + '&mobile=' + mobile + 'data=' + data,
+    url: 'https://api.tropo.com/1.0/sessions?action=create' + '&token=' + token + '&data=' + data,
     method: 'POST', 
 }, function(error, response, body){
     if(error) {
