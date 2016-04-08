@@ -72,7 +72,7 @@ request({
 
     if (str1[0]=='/inform') {
       postMsg(jsonText.roomId, 'Please wait while we connect your call to ' + str1[1]);
-      postHttp(str1[2]); 
+      postHttp('Test');
      }else {
         console.log('I will not do anything');
      
