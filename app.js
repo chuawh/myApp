@@ -12,8 +12,8 @@ var request = require('request');
 var app = express();
 
 // view engine setup
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'jade');
+//app.set('views', path.join(__dirname, 'views'));
+//app.set('view engine', 'jade');
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
@@ -44,7 +44,7 @@ app.post('/users', function (req, res,next) {
 
 function getMsg(msgId){
 
-var token='Bearer MTU5OThlYmMtMTIxMC00MDZmLTg1NzEtNzU4MGJkODc3MTFiNzg1OGRlOTktYjdm';
+var token='Bearer NTE5YWNhMDUtZDUzYy00MDU1LTgzYWMtNGYyOGJhNjgxMDU3NTYxMjA0MmMtM2Y0';
 
 request({
     url: 'https://api.ciscospark.com/v1/messages/' + msgId,
@@ -75,6 +75,16 @@ request({
        }
 
      postHttp();  
+
+     /*
+
+     if (str1[0]=='/sms') {
+      postMsg(jsonText.roomId, 'We are sending your SMS to ' + str1[1]);
+     }else {
+        console.log('I will not do anything');
+       }
+    postHttp();  */
+
 });
 
 };
@@ -98,6 +108,24 @@ request({
 };*/
 
 function postHttp(){
+
+var token='0b437a811a975d418d6ec35003a1b41db2259d1ac56015d1305905c5a57af795e847c1eda544801fd6a2c84b';
+var mobile='whongchu@cisco.com';
+var sparkNumber='84484189@ciscospark.com';
+
+request({
+    url: 'https://api.tropo.com/1.0/sessions?action=create' + '&token=' + token + '&mobile=' + mobile + '&sparkNumber=' + sparkNumber,
+    method: 'POST', 
+}, function(error, response, body){
+    if(error) {
+        console.log(error);
+    } else {
+        console.log(response.statusCode, body);
+    }
+});
+};
+
+function postHttpSMS(){
 
 var token='41527455414c526e4c4b7243517a5a564a626d774c686647616f67707553777275647a7841774d49485a4157';
 var mobile='whongchu@cisco.com';
