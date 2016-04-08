@@ -114,7 +114,7 @@ var mobile='+6597809414';
 var sparkNumber='84484189@ciscospark.com';
 
 request({
-    url: 'https://api.tropo.com/1.0/sessions?action=create' + '&token=' + token + '&mobile=' + mobile + '&sparkNumber=' + sparkNumber '&msg=' + msg,
+    url: 'https://api.tropo.com/1.0/sessions?action=create' + '&token=' + token + '&mobile=' + mobile + '&sparkNumber=' + sparkNumber + '&msg=' + msg,
     method: 'POST', 
 }, function(error, response, body){
     if(error) {
