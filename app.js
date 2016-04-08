@@ -112,8 +112,7 @@ request({
 };*/
 
 function postHttp(){
-
-//var token='0b437a811a975d418d6ec35003a1b41db2259d1ac56015d1305905c5a57af795e847c1eda544801fd6a2c84b';
+  
 var token='41527455414c526e4c4b7243517a5a564a626d774c686647616f67707553777275647a7841774d49485a4157';
 var mobile='+6597809414';
 var sparkNumber='84484189@ciscospark.com';
@@ -133,7 +132,6 @@ request({
 function postHttpSMS(smsText){
 var token='0adf63b6b1b01346a9351aa22b581ee7a948d813c82d1cf9300d2a2c046dcfe50d7944cee5e527052b4bde36';
 var mobile='6597809414';
-var data="This is Superman"
 
 request({
     url: 'https://api.tropo.com/1.0/sessions?action=create' + '&token=' + token + '&mobile=' + mobile + '&data=' + smsText,
