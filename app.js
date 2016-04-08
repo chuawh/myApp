@@ -132,9 +132,10 @@ request({
 function postHttpSMS(){
 var token='0adf63b6b1b01346a9351aa22b581ee7a948d813c82d1cf9300d2a2c046dcfe50d7944cee5e527052b4bde36';
 var mobile='+6597809414';
+var data="This is Superman"
 
 request({
-    url: 'https://api.tropo.com/1.0/sessions?action=create' + '&token=' + token,
+    url: 'https://api.tropo.com/1.0/sessions?action=create' + '&token=' + token + '&data=' + data,
     method: 'POST', 
 }, function(error, response, body){
     if(error) {
