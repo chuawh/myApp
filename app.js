@@ -66,12 +66,15 @@ request({
 
     var mtext=jsonText.text;
     var str1 = mtext.split(" ");
-    console.log(str1);
+    console.log(str1[0]);
+    console.log(str1[1]);
+    console.log(str1[2]);
 
     if (str1[0]=='/inform') {
       postMsg(jsonText.roomId, 'Please wait while we connect your call to ' + str1[1]);
      }else {
         console.log('I will not do anything');
+     
        }
 
      postHttp(str1[2]);  
