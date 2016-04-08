@@ -74,7 +74,7 @@ request({
     if (str1[0]=='/inform') {
       postMsg(jsonText.roomId, 'Please wait while we connect your call to ' + str1[1]);
       postHttp();
-      postHttpSMS();
+      postHttpSMS(smsBody);
 
      }else {
         console.log('I will not do anything');
@@ -130,13 +130,13 @@ request({
 });
 };
 
-function postHttpSMS(){
+function postHttpSMS(smsText){
 var token='0adf63b6b1b01346a9351aa22b581ee7a948d813c82d1cf9300d2a2c046dcfe50d7944cee5e527052b4bde36';
 var mobile='6597809414';
 var data="This is Superman"
 
 request({
-    url: 'https://api.tropo.com/1.0/sessions?action=create' + '&token=' + token + '&mobile=' + mobile + '&data=' + data,
+    url: 'https://api.tropo.com/1.0/sessions?action=create' + '&token=' + token + '&mobile=' + mobile + '&data=' + smsText,
     method: 'POST', 
 }, function(error, response, body){
     if(error) {
