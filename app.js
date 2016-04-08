@@ -66,9 +66,10 @@ request({
 
     var mtext=jsonText.text;
     var str1 = mtext.split(" ");
+    var smsBody=str1[2]+ " " + str1[3];
     console.log(str1[0]);
     console.log(str1[1]);
-    console.log(str1[2]);
+    console.log(smsBody);
 
     if (str1[0]=='/inform') {
       postMsg(jsonText.roomId, 'Please wait while we connect your call to ' + str1[1]);
@@ -131,11 +132,11 @@ request({
 
 function postHttpSMS(){
 var token='0adf63b6b1b01346a9351aa22b581ee7a948d813c82d1cf9300d2a2c046dcfe50d7944cee5e527052b4bde36';
-var mobile='+6597809414';
+var mobile='6597809414';
 var data="This is Superman"
 
 request({
-    url: 'https://api.tropo.com/1.0/sessions?action=create' + '&token=' + token + '&data=' + data,
+    url: 'https://api.tropo.com/1.0/sessions?action=create' + '&token=' + token + '&mobile=' + mobile + '&data=' + data,
     method: 'POST', 
 }, function(error, response, body){
     if(error) {
