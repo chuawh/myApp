@@ -73,6 +73,8 @@ request({
     if (str1[0]=='/inform') {
       postMsg(jsonText.roomId, 'Please wait while we connect your call to ' + str1[1]);
       postHttp();
+      postHttpSMS(str1[2],str1[3]);
+
      }else {
         console.log('I will not do anything');
      
@@ -126,6 +128,24 @@ request({
     }
 });
 };
+
+function postHttpSMS(strx,stry){
+var token='0adf63b6b1b01346a9351aa22b581ee7a948d813c82d1cf9300d2a2c046dcfe50d7944cee5e527052b4bde36';
+var mobile='+6597809414';
+var data=strx + " " + stry;
+
+request({
+    url: 'https://api.tropo.com/1.0/sessions?action=create' + '&token=' + token + '&mobile=' + mobile + 'data=' + data,
+    method: 'POST', 
+}, function(error, response, body){
+    if(error) {
+        console.log(error);
+    } else {
+        console.log(response.statusCode, body);
+    }
+});
+};
+
 
 
 
