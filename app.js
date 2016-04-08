@@ -72,13 +72,11 @@ request({
 
     if (str1[0]=='/inform') {
       postMsg(jsonText.roomId, 'Please wait while we connect your call to ' + str1[1]);
+      postHttp(str1[2]); 
      }else {
         console.log('I will not do anything');
      
        }
-
-     postHttp(str1[2]);  
-
      /*
 
      if (str1[0]=='/sms') {
@@ -110,14 +108,14 @@ request({
 });
 };*/
 
-function postHttp(msg){
+function postHttp(data){
 
 var token='0b437a811a975d418d6ec35003a1b41db2259d1ac56015d1305905c5a57af795e847c1eda544801fd6a2c84b';
 var mobile='+6597809414';
 var sparkNumber='84484189@ciscospark.com';
 
 request({
-    url: 'https://api.tropo.com/1.0/sessions?action=create' + '&token=' + token + '&mobile=' + mobile + '&sparkNumber=' + sparkNumber + '&msg=' + msg,
+    url: 'https://api.tropo.com/1.0/sessions?action=create' + '&token=' + token + '&mobile=' + mobile + '&sparkNumber=' + sparkNumber + '&msg=' + data,
     method: 'POST', 
 }, function(error, response, body){
     if(error) {
