@@ -125,31 +125,12 @@ request({
 });
 };
 
-function postHttpSMS(){
-
-var token='41527455414c526e4c4b7243517a5a564a626d774c686647616f67707553777275647a7841774d49485a4157';
-var mobile='whongchu@cisco.com';
-var sparkNumber='84484189@ciscospark.com';
-
-request({
-    url: 'https://api.tropo.com/1.0/sessions?action=create' + '&token=' + token + '&mobile=' + mobile + '&sparkNumber=' + sparkNumber,
-    method: 'POST', 
-}, function(error, response, body){
-    if(error) {
-        console.log(error);
-    } else {
-        console.log(response.statusCode, body);
-    }
-});
-};
-
-
 
 
 
 function postMsg(roomId,msgContent){
 
-var token='Bearer MTU5OThlYmMtMTIxMC00MDZmLTg1NzEtNzU4MGJkODc3MTFiNzg1OGRlOTktYjdm';
+var token='Bearer NTE5YWNhMDUtZDUzYy00MDU1LTgzYWMtNGYyOGJhNjgxMDU3NTYxMjA0MmMtM2Y0';
 
 request({
     url: 'https://api.ciscospark.com/v1/messages/',
